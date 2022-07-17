@@ -26,8 +26,7 @@ class AuthorController extends Controller
         ];
         return view('find', $param);
     }
-    // 追記：ここから
-    public function add()
+		public function add()
     {
         return view('add');
     }
@@ -37,5 +36,18 @@ class AuthorController extends Controller
         Author::create($form);
         return redirect('/');
     }
-		// 追記：ここまで
+		// 追記：ここから
+    public function edit(Request $request)
+    {
+        $author = Author::find($request->id);
+        return view('edit', ['form' => $author]);
+    }
+    public function update(AuthorRequest $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        Author::where('id', $request->id)->update($form);
+        return redirect('/');
+    }
+		// 追記：ここまで 
 }

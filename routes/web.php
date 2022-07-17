@@ -21,3 +21,7 @@ Route::post('/find', [AuthorController::class, 'search']);
 Route::get('/add', [AuthorController::class, 'add']);
 Route::post('/add', [AuthorController::class, 'create']);
 // 追記：ここまで
+// 追記：ここから
+Route::get('/edit', [AuthorController::class, 'edit']);
+Route::post('/edit', [AuthorController::class, 'update']);
+// 追記：ここまで
