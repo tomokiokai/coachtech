@@ -14,7 +14,7 @@
       text-align: center;
     }
 </style>
-@section('title', 'あいうえお')
+@section('title', 'index.blade.php')
 
 @section('content')
 <table>
