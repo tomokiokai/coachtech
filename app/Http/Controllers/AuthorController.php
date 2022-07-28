@@ -23,8 +23,6 @@ class AuthorController extends Controller
         Author::create($form);
         return redirect('/');
     }
-
-		// 修正：ここから
 		public function find()
     {
         return view('find', ['input' => '']);
@@ -38,16 +36,13 @@ class AuthorController extends Controller
         ];
         return view('find', $param);
     }
-		// 修正：ここまで
-
     public function edit(Request $request)
     {
         $author = Author::find($request->id);
         return view('edit', ['form' => $author]);
     }
-    public function update(Request $request)
+    public function update(AuthorRequest $request)
     {
-        $this->validate($request, Author::$rules);
         $form = $request->all();
         unset($form['_token']);
         Author::where('id', $request->id)->update($form);
@@ -63,4 +58,28 @@ class AuthorController extends Controller
         Author::find($request->id)->delete();
         return redirect('/');
     }
+	// 追記：ここから
+	public function bind(Author $author)
+    {
+        $data = [
+            'author'=>$author,
+        ];
+        return view('author.binds', $data);
+    }
+	// 追記：ここまで
+    public function get()
+{
+    $text = [
+        'content' => '自由に入力してください',
+    ];
+    return view('middleware', $text);
+}
+public function post(Request $request)
+{
+    $content = $request->content;
+    $text = [
+        'content' => $content . 'と入力しましたね'
+    ];
+    return view('middleware', $text);
+}
 }
