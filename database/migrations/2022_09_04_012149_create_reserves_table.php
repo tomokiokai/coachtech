@@ -17,8 +17,9 @@ class CreateReservesTable extends Migration
             $table->id();
             $table->integer('shop_id');
             $table->integer('user_id');
-            $table->datetime('time');
-            $table->integer('number');
+            $table->string('date');
+            $table->string('time');
+            $table->integer('num_customer');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });

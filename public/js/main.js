@@ -1,6 +1,13 @@
+//ハンバーガーメニューとドロワーメニュー
 const target = document.getElementById("menu");
 target.addEventListener('click', () => {
   target.classList.toggle('open');
-  const nav = document.getElementById("nav");
-  nav.classList.toggle('in');
+  const guestNav = document.getElementById('guest_nav');
+  guestNav.classList.toggle('in');
+});
+
+target.addEventListener('click', () => {
+  target.classList.toggle('authOpen');
+  const authNav = document.getElementById('auth_nav');
+  authNav.classList.toggle('in');
 });

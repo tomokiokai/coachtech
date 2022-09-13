@@ -1,6 +1,32 @@
-/* カードレイアウト部分をラッピングし、
-Flexboxを指定"space-between"で各アイテムを均等に配置し、
-最初と最後のアイテムを端に寄せます。*/
+/* サーチーメニュー */
+
+.search {
+  width: 86%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+}
+
+.search__inner {
+  box-shadow: 3px 3px 3px lightgrey;
+  background: #fff;
+}
+
+input {
+  width: 340px;
+  padding-left: 50px;
+  padding-top: 16.5px;
+  position: relative;
+}
+
+select,
+input {
+  border: none;
+  padding: 15px 15px 15px 10px;
+  font-size: 16px;
+}
+/**/
+
 #cardlayout-wrap {
   position: relative;
   display: -webkit-box;
@@ -78,8 +104,21 @@ a.card-link {
   #cardlayout-wrap::after {
     content: "";
     display: block;
-    width: calc(100% / 3);
+    width: calc(95% / 4);
   }
 }
 
+.form {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+}
 
+.btn {
+  background: rgb(69, 93, 244);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+  margin: 0px 0px 0px 10px;
+}

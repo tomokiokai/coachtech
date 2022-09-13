@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ReserveController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,10 @@ use App\Http\Controllers\ShopController;
 */
 
 Route::get('/', [ShopController::class, 'index']);
+Route::get('/search', [ShopController::class, 'search']);
+Route::post('/detail', [ShopController::class, 'detail']);
+Route::post('/reserve', [ReserveController::class, 'reserve']);
+
 
 
 Route::get('/dashboard', function () {

@@ -15,27 +15,27 @@ class GenresTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'name' => '寿司'
+            'genre_name' => '寿司'
         ];
         Genre::create($param);
         
         $param = [
-            'name' => '焼肉'
+            'genre_name' => '焼肉'
         ];
         Genre::create($param);
 
         $param = [
-            'name' => '居酒屋'
+            'genre_name' => '居酒屋'
         ];
         Genre::create($param);
 
         $param = [
-            'name' => 'イタリアン'
+            'genre_name' => 'イタリアン'
         ];
         Genre::create($param);
 
         $param = [
-            'name' => 'ラーメン'
+            'genre_name' => 'ラーメン'
         ];
         Genre::create($param);
     }

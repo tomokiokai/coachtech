@@ -1,0 +1,153 @@
+.detail {
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  margin: 0 auto 50px;
+}
+
+.shop {
+  width: 45%;
+  margin-top: 100px;
+}
+
+.shop__header {
+  display: flex;
+  align-items: center;
+}
+
+.back {
+  background: #fff;
+  color: black;
+  padding: 7px 13px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(183, 183, 183);
+  font-size: 22px;
+  margin-right: 12px;
+}
+
+.shop__ttl {
+  font-size: 28px;
+}
+
+img {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.hashutag {
+  display: flex;
+  padding-bottom: 25px;
+}
+
+.shop__content {
+  line-height: 22px;
+}
+
+.reserve {
+  width: 46%;
+  background: rgb(69, 93, 244);
+  border-radius: 8px;
+  height: 670px;
+}
+
+.reserve__inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.reserve__ttl {
+  color: #fff;
+  margin: 35px 0;
+  font-size: 28px;
+}
+
+input,
+select {
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 30%;
+}
+
+select {
+  width: 93%;
+  appearance: none;
+}
+
+.select {
+  position: relative;
+}
+
+.select:after {
+  content: "";
+  position: absolute;
+  right: 43px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  transform: translateY(-50%) rotate(-135deg);
+  pointer-events: none;
+}
+
+.reserve-confirm {
+  background: rgb(249, 249, 252, 0.3);
+  color: #fff;
+  width: 90%;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+table th {
+  text-align: left;
+  padding: 0 30px 15px 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: rgb(42, 69, 245);
+  border: none;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 18px;
+  margin-top: 200px;
+  border-radius: 0 0 8px 8px;
+}
+
+.guest {
+  display: block;
+  width: 100%;
+  background: rgb(42, 69, 245);
+  border: none;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 18px;
+  margin-top: 200px;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .reserve {
+    width: 53%;
+  }
+
+  input {
+    width: 50%;
+  }
+
+  .reserve-confirm {
+    padding: 20px 10px 20px 20px;
+  }
+}

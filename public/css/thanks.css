@@ -1,0 +1,30 @@
+.thanks {
+  width: 35%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+  padding: 100px 0;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgb(115, 115, 115);
+}
+
+.text {
+  font-size: 28px;
+}
+
+.login {
+  text-decoration: none;
+  background: rgb(69, 93, 244);
+  color: #fff;
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .thanks {
+    width: 60%;
+  }
+}
