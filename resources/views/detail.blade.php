@@ -48,11 +48,12 @@
         @endfor
         </select>
       </div>
+      @foreach ($reserves as $reserve) 
       <div class="reserve-confirm">
         <table>
           <tr>
             <th>Shop</th>
-            <td>{{ $shop->shop_name }}</td>
+            <td>{{ $reserve->shop->shop_name }}</td>
           </tr>
           <tr>
             <th>Date</th>
@@ -60,14 +61,15 @@
           </tr>
           <tr>
             <th>Time</th>
-            <td id="outputTime">{{ $reserve->time }}</td>
+            <td>{{ $reserve->time }}</td>
           </tr>
           <tr>
             <th>Number</th>
-            <td id="outputNumber">{{ $reserve->num_customer }}人</td>
+            <td>{{ $reserve->num_customer }}人</td>
           </tr>
         </table>
       </div>
+      @endforeach 
     </div>
     @auth
     <button class="btn">予約する</button>
@@ -77,4 +79,5 @@
     @endguest
   </form>
 </div>
+
 @endsection

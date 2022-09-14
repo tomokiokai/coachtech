@@ -42,7 +42,21 @@
           <input type="hidden" name="id" value="{{ $shop->id }}">
           <button class="btn">詳しく見る</button>
           </form>
-         
+          @auth
+          @if(!$shop->is_liked_by_auth_user())
+          <form action="/like" method="post">
+          @csrf
+            <input type="hidden" name="id" value="{{ $shop->id }}">
+            <button class="like" ><img class="like_img" src="/img/heart_1.png" alt=""></button>
+          </form>
+          @else
+          <form action="/unlike" method="post">
+          @csrf
+            <input type="hidden" name="id" value="{{ $shop->id }}">
+            <button class="unlike"><img class="unlike_img" src="/img/heart_2.png" alt=""></button>
+          </form>
+          @endif
+          @endauth
         
     </section>
 @endforeach 

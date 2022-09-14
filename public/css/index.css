@@ -122,3 +122,28 @@ a.card-link {
   padding: 5px 10px;
   margin: 0px 0px 0px 10px;
 }
+
+.like,
+.unlike {
+  background: #fff;
+  border: none;
+}
+
+.like_img,
+.unlike_img {
+  width: 50px;
+}
+
+@media screen and (max-width:768px) {
+  input {
+    width: 160px;
+  }
+
+  .shop__card {
+    width: calc((100% - 50px * 1) / 2);
+  }
+
+  .shop__content {
+    margin: 100px auto 0;
+  }
+}

@@ -7,6 +7,7 @@ use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Reserve;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
@@ -29,12 +30,12 @@ class ShopController extends Controller
     {
         $shop = Shop::find($request->id);
         $user_id = Auth::id();
-        $reserve = Reserve::where('shop_id', $request->id);
+        $reserves = Reserve::where('shop_id', $request->id)->get();
 
         $param = [
         'shop' =>$shop,
         'user_id' =>$user_id,
-        'reserve' =>$reserve
+        'reserves' =>$reserves
         ];
         
         return view('detail',$param);

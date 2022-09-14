@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\FavoriteController;
 
 
 /*
@@ -20,6 +21,8 @@ Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [ShopController::class, 'search']);
 Route::post('/detail', [ShopController::class, 'detail']);
 Route::post('/reserve', [ReserveController::class, 'reserve']);
+Route::post('/like',[FavoriteController::class,'like']);
+Route::post('/unlike',[FavoriteController::class,'unlike']);
 
 
 

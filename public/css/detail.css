@@ -47,7 +47,7 @@ img {
   width: 46%;
   background: rgb(69, 93, 244);
   border-radius: 8px;
-  height: 670px;
+  /*height: 670px;*/
 }
 
 .reserve__inner {
@@ -117,7 +117,7 @@ table th {
   color: #fff;
   padding: 15px 0;
   font-size: 18px;
-  margin-top: 200px;
+  /*margin-top: 200px;*/
   border-radius: 0 0 8px 8px;
 }
 
