@@ -8,15 +8,15 @@ use App\Models\Favorite;
 use App\Models\Reserve;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class MypageController extends Controller
 {
-  public function mypage()
+   public function mypage()
   {
     $user = Auth::user()->name;
     $id = Auth::id();
     $reserves = Reserve::where('user_id',$id)->get();
     $favorites = Favorite::where('user_id',$id)->get();
-    $reserveDate = Reserve::date();
-    return view('mypage',compact('user','reserves','likes','reserveDate'));
+    
+    return view('mypage',compact('user','reserves','favorites'));
   }
 }

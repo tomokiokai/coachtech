@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MypageController;
 
 
 /*
@@ -19,11 +20,12 @@ use App\Http\Controllers\FavoriteController;
 
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [ShopController::class, 'search']);
+Route::get('mypage',[MypageController::class,'mypage']);
 Route::post('/detail', [ShopController::class, 'detail']);
 Route::post('/reserve', [ReserveController::class, 'reserve']);
 Route::post('/like',[FavoriteController::class,'like']);
 Route::post('/unlike',[FavoriteController::class,'unlike']);
-
+Route::post('reserve/delete',[ReserveController::class,'remove']);
 
 
 Route::get('/dashboard', function () {

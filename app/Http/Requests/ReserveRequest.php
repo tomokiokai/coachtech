@@ -29,4 +29,5 @@ class ReserveRequest extends FormRequest
             'num_customer' => 'required'
         ];
     }
+
 }

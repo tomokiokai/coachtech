@@ -30,7 +30,7 @@ class ShopController extends Controller
     {
         $shop = Shop::find($request->id);
         $user_id = Auth::id();
-        $reserves = Reserve::where('shop_id', $request->id)->get();
+        $reserves = Reserve::where('shop_id', $request->id)->where('user_id',Auth::id())->get();
 
         $param = [
         'shop' =>$shop,

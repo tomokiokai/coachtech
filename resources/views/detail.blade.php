@@ -48,6 +48,7 @@
         @endfor
         </select>
       </div>
+      @auth
       @foreach ($reserves as $reserve) 
       <div class="reserve-confirm">
         <table>
@@ -70,6 +71,7 @@
         </table>
       </div>
       @endforeach 
+      @endauth
     </div>
     @auth
     <button class="btn">予約する</button>

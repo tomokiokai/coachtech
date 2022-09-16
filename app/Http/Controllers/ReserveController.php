@@ -14,5 +14,19 @@ class ReserveController extends Controller
         Reserve::create($form);
         return view('done');
     }
+
+    public function remove(Request $request)
+    {
+        Reserve::find($request->id)->delete();
+        return redirect()->back();
+    }
+
+    public function update(ReserveRequest $request)
+    {
+        $reserve = $request->all();
+        unset($reserve['_token']);
+        Reserve::where('id',$request->id)->update($reserve);
+        return redirect('mypage');
+    }
         
 }

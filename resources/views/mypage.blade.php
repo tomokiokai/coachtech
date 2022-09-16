@@ -24,6 +24,11 @@
             </form>
           </div>
         </div>
+        <form action="/update" method="post">
+        @csrf
+        <input type="hidden" name="id" value="{{ $reserve->id }}">
+        <input type="hidden" name="user_id" value="{{ $reserve->user->id }}">
+    <input type="hidden" name="shop_id" value="{{ $reserve->shop->id }}">
         <table>
           <tr>
             <th>Shop</th>
@@ -31,49 +36,74 @@
           </tr>
           <tr>
             <th>Date</th>
-            <td>{{ $reserve->date }}</td>
+            <td> <input type="date" name="date" id="date" value="{{ old('date', $reserve->date) }}"></td>
           </tr>
           <tr>
             <th>Time</th>
-            <td>{{ $reserve->time }}</td>
+            <td>
+              <div class="select">
+        <select name="time" id="time">
+        @for($time=10;$time<=22;$time++)
+          <option value="{{ $reserve->time }}" @if(old('time') == $reserve->time) selected @endif>{{$time}}:00</option>
+          <option value="{{ $reserve->time }}" @if(old('time') == $reserve->time) selected @endif>{{$time}}:30</option>
+        @endfor 
+        </select>
+      </td>
           </tr>
           <tr>
             <th>Number</th>
-            <td>{{ $reserve->num_customer }}人</td>
+            <td><div class="select">
+        <select name="number" id="number">
+        @for($i=1; $i<=8; $i++)
+        <option value="{{ old('num_customer',$reserve->customer) }}">{{$i}}人</option>
+        @endfor
+        </select>
+      </div>
+    </td>
           </tr>
         </table>
-        
+
+        <div class="edit">
+
+              <button class="edit__btn">変更する</button>
+        </form>
+      </div>  
+      </div>
+        @endforeach
+        </div>
+  </div>
+
   <div class="likes">
     <div class="likes__inner">
       <h2 class="likes__ttl">お気に入り店舗</h2>
       <div class="likes__content">
-        @foreach($likes as $like)
+        @foreach($favorites as $favorite)
         <div class="shop__card">
-          <img class="shop__img" src="{{$like->shop->img}}" alt="">
+          <img class="shop__img" src="{{$favorite->shop->image}}" alt="">
           <div class="card__text">
-            <p class="shop-name">{{$like->shop->shop}}</p>
+            <p class="shop-name">{{$favorite->shop->shop_name}}</p>
             <div class="hashutag">
-              <p>#{{$like->shop->area->area_name}}</p>
-              <p>#{{$like->shop->genre->genre_name}}</p>
+              <p>#{{$favorite->shop->area->area_name}}</p>
+              <p>#{{$favorite->shop->genre->genre_name}}</p>
             </div>
             <div class="form">
               <form action="/detail" method="post">
               @csrf
-              <input type="hidden" name="id" value="{{ $like->shop->id }}">
+              <input type="hidden" name="id" value="{{ $favorite->shop->id }}">
               <button class="btn">詳しく見る</button>
               </form>
               @auth
-              @if(!$like->shop->is_liked_by_auth_user())
+              @if(!$favorite->shop->is_liked_by_auth_user())
               <form action="/like" method="post">
               @csrf
-                <input type="hidden" name="id" value="{{ $like->shop->id }}">
-                <button class="like" ><img class="like_img" src="/img/heart_shape-1-2.jpg" alt=""></button>
+                <input type="hidden" name="id" value="{{ $favorite->shop->id }}">
+                <button class="like" ><img class="like_img" src="/img/heart_1.png" alt=""></button>
               </form>
               @else
               <form action="/unlike" method="post">
               @csrf
-                <input type="hidden" name="id" value="{{ $like->shop->id }}">
-                <button class="unlike"><img class="unlike_img" src="/img/heart_shape-1.jpg" alt=""></button>
+                <input type="hidden" name="id" value="{{ $favorite->shop->id }}">
+                <button class="unlike"><img class="unlike_img" src="/img/heart_2.png" alt=""></button>
               </form>
               @endif
               @endauth
