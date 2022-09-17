@@ -25,7 +25,8 @@ class ReserveController extends Controller
     {
         $reserve = $request->all();
         unset($reserve['_token']);
-        Reserve::where('id',$request->id)->update($reserve);
+        Reserve::where('id',$request->id)
+        ->update($reserve);
         return redirect('mypage');
     }
         

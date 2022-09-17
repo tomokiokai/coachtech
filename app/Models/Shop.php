@@ -22,6 +22,10 @@ public function favorites() {
         return $this->hasMany('App\Models\Favorite');
     }
 
+public function reviews() { 
+        return $this->hasMany('App\Models\Review');
+    }
+
 public function is_liked_by_auth_user()
   {
     $id = Auth::id();

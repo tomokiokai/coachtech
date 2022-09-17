@@ -25,7 +25,9 @@ Route::post('/detail', [ShopController::class, 'detail']);
 Route::post('/reserve', [ReserveController::class, 'reserve']);
 Route::post('/like',[FavoriteController::class,'like']);
 Route::post('/unlike',[FavoriteController::class,'unlike']);
+Route::post('/update',[ReserveController::class,'update']);
 Route::post('reserve/delete',[ReserveController::class,'remove']);
+Route::post('review',[ShopController::class,'review']);
 
 
 Route::get('/dashboard', function () {

@@ -44,8 +44,8 @@
               <div class="select">
         <select name="time" id="time">
         @for($time=10;$time<=22;$time++)
-          <option value="{{ $reserve->time }}" @if(old('time') == $reserve->time) selected @endif>{{$time}}:00</option>
-          <option value="{{ $reserve->time }}" @if(old('time') == $reserve->time) selected @endif>{{$time}}:30</option>
+          <option value="{{ $time }}:00" @if($reserve->time=="$time:00") selected @endif>{{$time}}:00</option>
+          <option value="{{ $time }}:30" @if($reserve->time=="$time:30") selected @endif>{{$time}}:30</option>
         @endfor 
         </select>
       </td>
@@ -53,9 +53,9 @@
           <tr>
             <th>Number</th>
             <td><div class="select">
-        <select name="number" id="number">
+        <select name="num_customer" id="number">
         @for($i=1; $i<=8; $i++)
-        <option value="{{ old('num_customer',$reserve->customer) }}">{{$i}}人</option>
+        <option value="{{ $i }}" @if($reserve->num_customer==$i) selected @endif>{{$i}}人</option>
         @endfor
         </select>
       </div>

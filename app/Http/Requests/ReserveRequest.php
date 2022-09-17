@@ -6,6 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ReserveRequest extends FormRequest
 {
+protected $redirectRoute = '/reserve';
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -28,6 +30,7 @@ class ReserveRequest extends FormRequest
             'time' => 'required',
             'num_customer' => 'required'
         ];
+        
     }
 
 }
