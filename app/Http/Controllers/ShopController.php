@@ -8,6 +8,7 @@ use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Reserve;
 use App\Models\Favorite;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
@@ -31,11 +32,14 @@ class ShopController extends Controller
         $shop = Shop::find($request->id);
         $user_id = Auth::id();
         $reserves = Reserve::where('shop_id', $request->id)->where('user_id',Auth::id())->get();
+        
+        $reviews = Review::where('shop_id', $request->id)->get();
 
         $param = [
         'shop' =>$shop,
         'user_id' =>$user_id,
-        'reserves' =>$reserves
+        'reserves' =>$reserves,
+        'reviews' =>$reviews
         ];
         
         return view('detail',$param);
@@ -71,12 +75,30 @@ class ShopController extends Controller
             'areas' => $areas,
             'area_id' => $area_id,
             'genre_id' => $genre_id,
-
-
-
         ];
         return view('index', $param);
     }
     
-    
+    public function review(Request $request)
+    {
+        $form = $request->all();
+        Review::create($form);
+
+        $shop = Shop::find($request->id);
+        $user_id = Auth::id();
+        $reserves = Reserve::where('shop_id', $request->id)->where('user_id',Auth::id())->get();
+        
+        $reviews = Review::where('shop_id', $request->id)->get();
+
+        $param = [
+        'shop' =>$shop,
+        'user_id' =>$user_id,
+        'reserves' =>$reserves,
+        'reviews' =>$reviews
+        ];
+        
+        return view('detail', $param);
+
+        
+    }
 }

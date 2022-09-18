@@ -40,6 +40,7 @@
           <form action="/detail" method="post">
           @csrf
           <input type="hidden" name="id" value="{{ $shop->id }}">
+          
           <button class="btn">詳しく見る</button>
           </form>
           @auth

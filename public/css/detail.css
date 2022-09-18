@@ -44,10 +44,12 @@ img {
 }
 
 .reserve {
+  display: flex;
+    flex-direction: column;
   width: 46%;
   background: rgb(69, 93, 244);
   border-radius: 8px;
-  /*height: 670px;*/
+  height: auto;
 }
 
 .reserve__inner {
@@ -95,6 +97,7 @@ select {
   pointer-events: none;
 }
 
+
 .reserve-confirm {
   background: rgb(249, 249, 252, 0.3);
   color: #fff;
@@ -117,7 +120,7 @@ table th {
   color: #fff;
   padding: 15px 0;
   font-size: 18px;
-  /*margin-top: 200px;*/
+  margin-top: 170px;
   border-radius: 0 0 8px 8px;
 }
 
@@ -138,6 +141,59 @@ table th {
   color: red;
 }
 
+ .review {
+  width: 700px;
+  padding: 5px 0;
+  margin: 0 auto;
+  background: rgb(69, 93, 244);
+  border-radius: 8px;
+  }
+  
+  label {
+      display: block;
+      color: #fff;
+  }
+  
+  .example {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  #score {
+      width: 30%;
+  }
+  
+  
+
+    #iken {
+      width: 100%;
+      height: 100px;
+
+    }
+
+    #review-btn {
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+.review__ttl {
+  color: black;
+  margin: 0 0 0 40px;
+  font-size: 28px;
+}
+
+        .review-confirm {
+          background: rgb(69, 93, 244);
+          color: #fff;
+          width: 90%;
+          padding: 20px;
+          border-radius: 8px;
+          
+          margin: 20px auto;
+        }
+  
+
 @media screen and (max-width: 768px) {
   .reserve {
     width: 53%;
@@ -150,4 +206,7 @@ table th {
   .reserve-confirm {
     padding: 20px 10px 20px 20px;
   }
+    
+ 
+  
 }

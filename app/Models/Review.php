@@ -9,8 +9,15 @@ class Review extends Model
 {
     use HasFactory;
 
-    public function area(){
+    protected $fillable = ['strars', 'comment', 'shop_id', 'user_id'];
+
+
+    public function user(){
 	return $this->belongsTo('App\Models\users');
 }
+
+public function shop(){
+        return $this->belongsTo('App\Models\Shop');
+    }
 
 }

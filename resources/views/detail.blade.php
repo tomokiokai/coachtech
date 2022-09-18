@@ -26,15 +26,15 @@
       @error('date')
         <p class="error">{{ $message }}</p>
       @enderror
-      <input type="date" name="date" id="date" value="{{ old('date') }}">
+      <input type="date" name="date" id="date" >
       <div class="select">
         @error('time')
           <p class="error">{{ $message }}</p>
         @enderror
         <select name="time" id="time">
         @for($time=10;$time<=22;$time++)
-          <option value= "{{ old('$time:00') }}">{{$time}}:00</option>
-          <option value="{{ old('$time:30') }}">{{$time}}:30</option>
+          <option value="{{ $time }}:00">{{$time}}:00</option>
+          <option value="{{ $time }}:30">{{$time}}:30</option>
         @endfor 
         </select>
       </div>
@@ -44,7 +44,7 @@
         @enderror
         <select name="num_customer" id="num_customer">
         @for($i=1; $i<=8; $i++)
-        <option value="{{ old('$i') }}">{{$i}}人</option>
+        <option value="{{ $i }}">{{$i}}人</option>
         @endfor
         </select>
       </div>
@@ -81,5 +81,45 @@
     @endguest
   </form>
 </div>
+
+<form action="/review" method="post" class="review">
+  @csrf
+<input type="hidden" name="user_id" value="{{ $user_id }}"> 
+    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+  <div class="example">
+    <label for="namelabel">評価点</label>
+  <select name="strars" id="score">
+        @for($i=1; $i<=5; $i++)
+        <option value="{{ $i }}">{{$i}}点</option>
+        @endfor
+        </select>
+  </div>
+  <div class="example">
+    <label for="ikenlabel">ご意見</label>
+    <textarea name="comment" id="iken"></textarea>
+  </div>
+  <div class="example">
+    <input type="submit" id="review-btn" value="投稿する">
+  </div>  
+</form>
+<h2 class="review__ttl">他のレビュー</h2>
+@foreach ($reviews as $review) 
+      <div class="review-confirm">
+        <table>
+          <tr>
+            <th>名前</th>
+            <td>{{ $review->name }}</td>
+          </tr>
+          <tr>
+            <th>評価点</th>
+            <td>{{ $review->strars }}</td>
+          </tr>
+          <tr>
+            <th>ご意見</th>
+            <td>{{ $review->comment }}</td>
+          </tr>
+        </table>
+      </div>
+  @endforeach 
 
 @endsection
