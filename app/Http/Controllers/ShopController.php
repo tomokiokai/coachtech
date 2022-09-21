@@ -29,11 +29,11 @@ class ShopController extends Controller
 
     public function detail(Request $request)
     {
-        $shop = Shop::find($request->id);
+        $shop = Shop::find($request->shop_id);
         $user_id = Auth::id();
-        $reserves = Reserve::where('shop_id', $request->id)->where('user_id',Auth::id())->get();
+        $reserves = Reserve::where('shop_id', $request->shop_id)->where('user_id',Auth::id())->get();
         
-        $reviews = Review::where('shop_id', $request->id)->get();
+        $reviews = Review::where('shop_id', $request->shop_id)->get();
 
         $param = [
         'shop' =>$shop,
@@ -84,14 +84,15 @@ class ShopController extends Controller
         $form = $request->all();
         Review::create($form);
 
-        $shop = Shop::find($request->id);
+        $shop = Shop::find($request->shop_id);
         $user_id = Auth::id();
-        $reserves = Reserve::where('shop_id', $request->id)->where('user_id',Auth::id())->get();
+        $reserves = Reserve::where('shop_id', $request->shop_id)->where('user_id',Auth::id())->get();
         
-        $reviews = Review::where('shop_id', $request->id)->get();
+        $reviews = Review::where('shop_id', $request->shop_id)->get();
 
         $param = [
         'shop' =>$shop,
+        
         'user_id' =>$user_id,
         'reserves' =>$reserves,
         'reviews' =>$reviews

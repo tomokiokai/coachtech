@@ -108,7 +108,7 @@
         <table>
           <tr>
             <th>名前</th>
-            <td>{{ $review->name }}</td>
+            <td>{{ $review->user->name }}</td>
           </tr>
           <tr>
             <th>評価点</th>

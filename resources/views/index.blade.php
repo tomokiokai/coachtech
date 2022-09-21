@@ -37,10 +37,9 @@
               #{{$shop->genre->genre_name}}
             </p>
             <div class="form">
-          <form action="/detail" method="post">
+          <form action="/detail" method="get">
           @csrf
-          <input type="hidden" name="id" value="{{ $shop->id }}">
-          
+          <input type="hidden" name="shop_id" value="{{ $shop->id }}">
           <button class="btn">詳しく見る</button>
           </form>
           @auth

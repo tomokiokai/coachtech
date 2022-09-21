@@ -21,7 +21,7 @@ use App\Http\Controllers\MypageController;
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [ShopController::class, 'search']);
 Route::get('mypage',[MypageController::class,'mypage']);
-Route::post('/detail', [ShopController::class, 'detail'])->name('detail');;
+Route::get('/detail', [ShopController::class, 'detail']);
 Route::post('/reserve', [ReserveController::class, 'reserve']);
 Route::post('/like',[FavoriteController::class,'like']);
 Route::post('/unlike',[FavoriteController::class,'unlike']);
@@ -33,5 +33,14 @@ Route::post('review',[ShopController::class,'review']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::prefix('admin')->name('admin.')->group(function(){
+
+     Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->middleware(['auth:admin'])->name('dashboard');
+
+    require __DIR__.'/admin.php';
+});
 
 require __DIR__.'/auth.php';//
