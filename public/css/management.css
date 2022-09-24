@@ -1,0 +1,301 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+}
+
+span,
+label,
+input {
+  display: inline-block;
+}
+
+div:not(.confirm, .table-page) {
+  margin-bottom: 30px;
+}
+
+.form-content {
+  border: 1px solid #000;
+  width: 90%;
+  margin: 0 auto 50px;
+  padding: 50px 70px 10px 70px;
+}
+
+.form-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ----------------見出し部分---------------- */
+.title {
+  font-weight: bold;
+  width: 150px;
+}
+
+.title-gender {
+  font-weight: bold;
+  width: 50px;
+  margin-left: 50px;
+}
+
+/* ----------------入力部分---------------- */
+input {
+  width: 250px;
+  height: 50px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+}
+
+input[name="gender"] {
+  width: 70px;
+  height: 40px;
+}
+
+textarea,
+input {
+  vertical-align: middle;
+  border: none
+}
+
+/* ----------------テーブル部分---------------- */
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+th {
+  border-bottom: 1px solid #000;
+}
+
+th,
+td {
+  padding: 10px 30px;
+  word-break: break-all;
+}
+
+tr {
+  height: 60px;
+}
+
+.table-id {
+  width: 100px;
+}
+
+.table-name {
+  width: 150px;
+}
+
+.table-gender {
+  width: 100px;
+}
+
+.table-email {
+  width: 350px;
+}
+
+.opinion {
+  display: block;
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.opinion:hover {
+  white-space: normal;
+  width: 700px;
+}
+
+.delete {
+  text-align: right;
+}
+
+table button {
+  width: 80px;
+  height: 30px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ----------------ボタン---------------- */
+.confirm {
+  text-align: center;
+}
+
+.form-content button {
+  width: 130px;
+  height: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-content button:nth-of-type(2) {
+  color: black;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+/* サーチーメニュー */
+
+.search {
+  width: 86%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+}
+
+.search__inner {
+  box-shadow: 3px 3px 3px lightgrey;
+  background: #fff;
+}
+
+input {
+  width: 340px;
+  padding-left: 50px;
+  padding-top: 16.5px;
+  position: relative;
+}
+
+select,
+input {
+  border: none;
+  padding: 15px 15px 15px 10px;
+  font-size: 16px;
+}
+/**/
+
+#cardlayout-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  margin: 2em auto;
+  max-width: 95%;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+/* リンクテキストの下線を非表示 */
+a.card-link {
+  text-decoration: none;
+}
+
+/* カードレイアウト内の画像を幅いっぱいに表示 */
+#cardlayout-wrap img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* カードレイアウトのタイトル部分 */
+.card-title {
+  margin: 0.6em 0 0;
+  color: #333;
+  padding: 0 0 0 15px;
+  font-size: 1.8em;
+}
+
+/* カードレイアウトの説明文部分 */
+.card-text-tax {
+  margin: 0;
+  padding: 1em;
+  color: #818181;
+}
+
+
+/* カードレイアウトを1カラムで配置 */
+.card-list {
+  margin: 0.5em auto;
+  padding: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 画面幅768px以上の場合カードレイアウトを2カラムで配置 */
+@media all and (min-width: 768px) {
+  .card-list {
+    margin: 0.5em 0;
+    width: calc(100% / 2);
+    /* 100%幅を2で割るという指定 */
+  }
+}
+
+/* 画面幅992px以上の場合カードレイアウトを3カラムで配置 */
+@media all and (min-width: 992px) {
+  .card-list {
+    width: calc(95% / 4);
+    /* 100%幅を3で割るという指定 */
+  }
+
+  /* 最後の行が3列より少ない場合左寄せにレイアウトさせる */
+  #cardlayout-wrap::after {
+    content: "";
+    display: block;
+    width: calc(95% / 4);
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.btn {
+  background: rgb(69, 93, 244);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+  margin: 0px 0px 0px 10px;
+}
+
+.like,
+.unlike {
+  background: #fff;
+  border: none;
+}
+
+.like_img,
+.unlike_img {
+  width: 50px;
+}
+
+@media screen and (max-width:768px) {
+  input {
+    width: 160px;
+  }
+
+  .shop__card {
+    width: calc((100% - 50px * 1) / 2);
+  }
+
+  .shop__content {
+    margin: 100px auto 0;
+  }
+}

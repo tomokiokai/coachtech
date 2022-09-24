@@ -5,6 +5,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\ManagementController;
 
 
 /*
@@ -39,6 +40,18 @@ Route::prefix('admin')->name('admin.')->group(function(){
      Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->middleware(['auth:admin'])->name('dashboard');
+
+    Route::get('/management', [ManagementController::class, 'index'])
+    ->middleware(['auth:admin'])->name('management');
+
+    Route::post('/create', [ManagementController::class, 'create'])
+    ->middleware(['auth:admin'])->name('create');
+
+    Route::get('/detail', [ManagementController::class, 'detail'])
+    ->middleware(['auth:admin'])->name('detail');
+
+    Route::post('/update', [ManagementController::class, 'update'])
+    ->middleware(['auth:admin'])->name('update');
 
     require __DIR__.'/admin.php';
 });

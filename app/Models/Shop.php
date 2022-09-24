@@ -10,6 +10,8 @@ class Shop extends Model
 {
     use HasFactory;
 
+protected $fillable = ['shop_name', 'comment', 'image', 'area_id', 'genre_id','admin_id'];
+
     public function area(){
 	return $this->belongsTo('App\Models\Area');
 }
@@ -18,11 +20,10 @@ class Shop extends Model
 	return $this->belongsTo('App\Models\Genre');
 }
 
+
 public function favorites() {
         return $this->hasMany('App\Models\Favorite');
     }
-
-
 
 public function is_liked_by_auth_user()
   {
