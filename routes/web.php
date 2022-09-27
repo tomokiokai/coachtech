@@ -6,6 +6,7 @@ use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ManagementController;
+use App\Http\Controllers\RepresentativeController;
 
 
 /*
@@ -23,6 +24,9 @@ Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [ShopController::class, 'search']);
 Route::get('mypage',[MypageController::class,'mypage']);
 Route::get('/detail', [ShopController::class, 'detail']);
+Route::get('/qrcode', [ReserveController::class, 'qrcode']);
+Route::get('/proof', [ReserveController::class, 'proof']);
+
 Route::post('/reserve', [ReserveController::class, 'reserve']);
 Route::post('/like',[FavoriteController::class,'like']);
 Route::post('/unlike',[FavoriteController::class,'unlike']);
@@ -34,6 +38,7 @@ Route::post('review',[ShopController::class,'review']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
@@ -54,6 +59,25 @@ Route::prefix('admin')->name('admin.')->group(function(){
     ->middleware(['auth:admin'])->name('update');
 
     require __DIR__.'/admin.php';
+});
+
+Route::prefix('manager')->name('manager.')->group(function(){
+
+    Route::get('/dashboard', function () {
+        return view('manager.dashboard');
+    })->middleware(['auth:manager'])->name('dashboard');
+
+    Route::get('/management', [RepresentativeController::class, 'index'])
+    ->middleware(['auth:manager'])->name('management');
+
+    Route::post('/create', [RepresentativeController::class, 'create'])
+    ->middleware(['auth:manager'])->name('create');
+
+    Route::post('/delete', [RepresentativeController::class, 'delete'])
+    ->middleware(['auth:manager'])->name('delete');
+
+require __DIR__.'/manager.php';
+
 });
 
 require __DIR__.'/auth.php';//

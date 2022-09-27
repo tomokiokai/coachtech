@@ -6,13 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "chillerlan/php-qrcode": "^4.3",
         "doctrine/dbal": "^3.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "predis/predis": "^2.0"
+        "predis/predis": "^2.0",
+        "simplesoftwareio/simple-qrcode": "^0.0.4@beta"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

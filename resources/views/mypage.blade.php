@@ -67,7 +67,15 @@
 
               <button class="edit__btn">変更する</button>
         </form>
-      </div>  
+      </div>
+
+      <div class="edit">
+      <form action="/qrcode" method="get">
+        @csrf
+        <input type="hidden" name="id" value="{{ $reserve->id }}">
+        <button class="edit__btn">予約QRコード</button>
+        </div>
+        </form>
       </div>
         @endforeach
         </div>

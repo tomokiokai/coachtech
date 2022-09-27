@@ -81,7 +81,7 @@
     @endguest
   </form>
 </div>
-
+@auth
 <form action="/review" method="post" class="review">
   @csrf
 <input type="hidden" name="user_id" value="{{ $user_id }}"> 
@@ -102,6 +102,7 @@
     <input type="submit" id="review-btn" value="投稿する">
   </div>  
 </form>
+@endauth
 <h2 class="review__ttl">他のレビュー</h2>
 @foreach ($reviews as $review) 
       <div class="review-confirm">

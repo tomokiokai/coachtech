@@ -29,5 +29,17 @@ class ReserveController extends Controller
         ->update($reserve);
         return redirect('mypage');
     }
+
+    public function qrcode(Request $request)
+    {
+        $reserve = Reserve::find($request->id);
+        return view('qrcode',$reserve);
+    }
+
+    public function proof(Request $request)
+    {
+        $reserve = Reserve::find($request)->first();
+        return view('proof',compact('reserve'));
+    }
         
 }

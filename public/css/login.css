@@ -7,6 +7,10 @@
   background: #fff;
 }
 
+.login_link {
+  margin-left: 20px;
+}
+
 svg {
   width: 40px;
   height: 30px;
