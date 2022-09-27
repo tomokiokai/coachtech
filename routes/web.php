@@ -25,7 +25,8 @@ Route::get('/search', [ShopController::class, 'search']);
 Route::get('mypage',[MypageController::class,'mypage']);
 Route::get('/detail', [ShopController::class, 'detail']);
 Route::get('/qrcode', [ReserveController::class, 'qrcode']);
-Route::get('/proof', [ReserveController::class, 'proof']);
+Route::get('/proof', [ReserveController::class, 'proof'])->name('proof');
+
 
 Route::post('/reserve', [ReserveController::class, 'reserve']);
 Route::post('/like',[FavoriteController::class,'like']);
@@ -75,6 +76,8 @@ Route::prefix('manager')->name('manager.')->group(function(){
 
     Route::post('/delete', [RepresentativeController::class, 'delete'])
     ->middleware(['auth:manager'])->name('delete');
+
+    Route::get('/send', [MailController::class, 'send'])->middleware(['auth:manager'])->name('send');
 
 require __DIR__.'/manager.php';
 

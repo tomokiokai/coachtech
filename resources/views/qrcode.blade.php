@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Rese</title>
+</head>
+<body>
 <div class="qr">
   {!! QrCode::size(300)->generate(route('proof',['reserve'=>$reserve])) !!}
 </div>
+</body>
 
 <style>
   .qr {
