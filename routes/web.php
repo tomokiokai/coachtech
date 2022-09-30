@@ -7,6 +7,7 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\RepresentativeController;
+use App\Http\Controllers\MailSendController;
 
 
 /*
@@ -26,6 +27,7 @@ Route::get('mypage',[MypageController::class,'mypage']);
 Route::get('/detail', [ShopController::class, 'detail']);
 Route::get('/qrcode', [ReserveController::class, 'qrcode']);
 Route::get('/proof', [ReserveController::class, 'proof'])->name('proof');
+
 
 
 Route::post('/reserve', [ReserveController::class, 'reserve']);
@@ -77,7 +79,17 @@ Route::prefix('manager')->name('manager.')->group(function(){
     Route::post('/delete', [RepresentativeController::class, 'delete'])
     ->middleware(['auth:manager'])->name('delete');
 
-    Route::get('/send', [MailController::class, 'send'])->middleware(['auth:manager'])->name('send');
+    
+    Route::get('/comment', [MailSendController::class, 'showForm'])
+    ->middleware(['auth:manager'])->name('comment');
+
+    Route::post('/comment/create', [MailSendController::class, 'create'])
+    ->middleware(['auth:manager']);
+
+    Route::get('/comment/thanks', [MailSendController::class, 'thanks'])
+    ->middleware(['auth:manager'])->name('comment.thanks');
+    
+    
 
 require __DIR__.'/manager.php';
 

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 
+use App\Mail\TestMail;
+use Mail;
+
 class RepresentativeController extends Controller
 {
     public function index()
@@ -31,7 +34,9 @@ class RepresentativeController extends Controller
     public function delete(Request $request)
     {
         Admin::find($request->id)->delete();
-         return redirect()->back();
+        return redirect()->back();
     }
+    
+    
     
 }

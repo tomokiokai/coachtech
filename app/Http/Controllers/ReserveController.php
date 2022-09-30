@@ -34,7 +34,7 @@ class ReserveController extends Controller
     public function qrcode(Request $request)
     {
         $reserve = Reserve::find($request->id);
-        return view('qrcode',$reserve);
+        return view('qrcode',compact('reserve'));
     }
 
     public function proof(Request $request)

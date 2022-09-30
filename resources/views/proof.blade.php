@@ -7,8 +7,12 @@
     <title>Rese</title>
 </head>
 <body>
-  <div class="reserve-confirm">
+  
         <table>
+          <tr>
+            <th>name</th>
+            <td>{{ $reserve->user->name }}様</td>
+          </tr>
           <tr>
             <th>Shop</th>
             <td>{{ $reserve->shop->shop_name }}</td>
@@ -26,5 +30,5 @@
             <td>{{ $reserve->num_customer }}人</td>
           </tr>
         </table>
-      </div>
+
 </body>
