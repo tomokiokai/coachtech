@@ -27,6 +27,11 @@ div:not(.confirm, .table-page) {
   padding: 50px 70px 10px 70px;
 }
 
+.form-comment {
+  width: 90%;
+  margin: 0 auto 50px;
+}
+
 .form-table {
   width: 90%;
   margin: 0 auto;
@@ -133,6 +138,17 @@ table button {
 }
 
 .form-content button {
+  width: 130px;
+  height: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-comment button {
   width: 130px;
   height: 40px;
   font-weight: bold;

@@ -33,6 +33,12 @@
     </div>
   </form>
 
+  <form action="comment" method="get" class="form-comment">
+  <div class="confirm">
+      <button type="submit" name="">ユーザーに連絡</button><br>
+    </div>
+    </form>
+
   <h1>店舗代表者一覧</h1>
   <div class="form-table">
     <table>

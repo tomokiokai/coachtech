@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\JsonResponse;
 
 class RegisteredUserController extends Controller
 {
@@ -50,5 +52,20 @@ class RegisteredUserController extends Controller
 
         return view('/thanks');
     }
+    
+    public function register(Request $request): JsonResponse
+    {
+        $validate = $this->validator($request->all());
 
+        if ($validate->fails()) {
+            return new JsonResponse($validate->errors());
+        }
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // 新規作成後自動ログイン
+        $this->guard()->login($user);
+
+        return new JsonResponse(['user' => $user]);
+    }
 }

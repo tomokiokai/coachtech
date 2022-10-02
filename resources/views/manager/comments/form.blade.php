@@ -18,6 +18,7 @@
                 <button type="submit" class="btn btn-primary">送信</button>
               </div>
             </form>
+            <a class="back" href="javascript:history.back()">戻る</a>
           </div>
         </div>
       </div>

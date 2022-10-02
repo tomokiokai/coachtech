@@ -23,11 +23,14 @@ use App\Http\Controllers\MailSendController;
 
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [ShopController::class, 'search']);
-Route::get('mypage',[MypageController::class,'mypage']);
-Route::get('/detail', [ShopController::class, 'detail']);
+
 Route::get('/qrcode', [ReserveController::class, 'qrcode']);
 Route::get('/proof', [ReserveController::class, 'proof'])->name('proof');
+Route::get('/detail', [ShopController::class, 'detail']);
 
+Route::middleware(['verified'])->group(function(){
+Route::get('mypage',[MypageController::class,'mypage']);
+});
 
 
 Route::post('/reserve', [ReserveController::class, 'reserve']);
@@ -36,6 +39,7 @@ Route::post('/unlike',[FavoriteController::class,'unlike']);
 Route::post('/update',[ReserveController::class,'update']);
 Route::post('reserve/delete',[ReserveController::class,'remove']);
 Route::post('review',[ShopController::class,'review']);
+Route::post('/pay', 'PaymentController@pay');
 
 
 Route::get('/dashboard', function () {
