@@ -1,8 +1,8 @@
 {
-    "name": "tomok/reserve-test",
+    "name": "tomok/php-unit-test",
     "autoload": {
         "psr-4": {
-            "Tomok\\ReserveTest\\": "src/"
+            "Tomok\\PhpUnitTest\\": "src/"
         }
     },
     "authors": [

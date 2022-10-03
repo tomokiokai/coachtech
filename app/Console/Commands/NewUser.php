@@ -47,7 +47,7 @@ class NewUser extends Command
 
 
         foreach($reserves as $reserve){
-            return Mail::to($reserve->user->email)->send(new WelcomeMail($reserve));
+             Mail::to($reserve->user->email)->send(new WelcomeMail($reserve));
     }
     }
 }
