@@ -1,7 +1,11 @@
 @extends('layouts.default')
 
 @section('main')
+@if(app('env') == 'production')
+    <link rel="stylesheet" href="{{ secure_asset('css/index.css') }}">
+    @else
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    @endif
 
   <div id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
 

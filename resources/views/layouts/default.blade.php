@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+
+    @if(app('env') == 'production')
+    <link rel="stylesheet" href="{{ secure_asset('css/default.css') }}">
+    @else
     <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    @endif
+
     <title>Rese</title>
 </head>
 <body>
