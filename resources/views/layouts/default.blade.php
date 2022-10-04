@@ -48,6 +48,10 @@
     <main class="main">
         @yield('main')
     </main>
+    @if(app('env') == 'production')
+    <script src="{{ secure_asset('js/main.js') }}"></script>
+    @else
     <script src="{{ asset('js/main.js') }}"></script>
+    @endif
 </body>
 </html>
