@@ -23,8 +23,11 @@ class MailSendController extends Controller
 
     public function create(Request $request)
     {
+        $user = Auth::user();
         $users = User::all();
         $comment = new Comment(['body' => $request->comment]);
+
+        $user->comments()->save($comment);
         
         foreach ($users as $user) {
         Mail::to($user->email)->send(new CommentPosted($user,$comment));

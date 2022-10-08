@@ -117,9 +117,9 @@
               <p>#{{$favorite->shop->genre->genre_name}}</p>
             </div>
             <div class="form">
-              <form action="/detail" method="post">
+              <form action="/detail" method="get">
               @csrf
-              <input type="hidden" name="id" value="{{ $favorite->shop->id }}">
+              <input type="hidden" name="shop_id" value="{{ $favorite->shop->id }}">
               <button class="btn">詳しく見る</button>
               </form>
               @auth
