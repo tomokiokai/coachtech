@@ -9,6 +9,7 @@
         "chillerlan/php-qrcode": "^4.3",
         "doctrine/dbal": "^3.4",
         "fruitcake/laravel-cors": "^2.0",
+        "google/apiclient": "2.*",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/cashier": "*",
         "laravel/framework": "^8.75",
