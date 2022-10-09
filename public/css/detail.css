@@ -112,6 +112,11 @@ table th {
   padding: 0 30px 15px 0;
 }
 
+table td {
+  
+  padding: 0 30px 15px 0;
+}
+
 .btn {
   display: block;
   width: 100%;

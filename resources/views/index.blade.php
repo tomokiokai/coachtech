@@ -27,6 +27,7 @@
           @endforeach
           </select><i class="fa-solid fa-magnifying-glass"></i>
         <input type="text" name="shop_name" placeholder="Search...">
+        <button class="search_btn">検索</button>
 </form>
 </div>
 </div>

@@ -88,7 +88,7 @@ a.card-link {
 @media all and (min-width: 768px) {
   .card-list {
     margin: 0.5em 0;
-    width: calc(100% / 2);
+    width: calc(95% / 2);
     /* 100%幅を2で割るという指定 */
   }
 }
@@ -112,6 +112,15 @@ a.card-link {
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
+}
+
+.search_btn {
+  background: rgb(178, 178, 182);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+  margin: 15px 20px 0px 0px;
 }
 
 .btn {

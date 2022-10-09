@@ -1,64 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# rese
+飲食店予約アプリ
+![reseスクリーンショット](https://user-images.githubusercontent.com/106807413/194700870-dcb2d477-7534-4ffb-ada7-bd5e021c0c3d.png)
+## 作成した目的
+アドバンスタームの学習のため作成
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## アプリケーションURL
+https://aqueous-ridge-27902.herokuapp.com/
 
-## About Laravel
+※下記にて登録されておりますのでご使用下さい
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+利用者(user)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+user:aiueo
+email:aiueo@co.jp
+password:aiueo@co.jp
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+user:test111
+email:test111@aaa
+password:test1111
 
-## Learning Laravel
+店舗代表者(admin)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+admin:admin1
+email:admin1@aaa
+password:admin111
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+admin:admin2
+email:admin2@aaa
+password:admin222
 
-## Laravel Sponsors
+admin:admin3
+email:admin3@aaa
+password:admin333
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+admin:admin4
+email:admin4@aaa
+password:admin444
 
-### Premium Partners
+admin:admin5
+email:admin5@aaa
+password:admin555
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+管理者(manager)
 
-## Contributing
+manager:manager1
+email:manager1@aaa
+password:manager111
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 機能一覧
+会員登録  
+ログイン  
+ログアウト  
+ユーザー情報取得  
+ユーザー飲食店お気に入り一覧取得  
+ユーザー飲食店予約情報取得  
+飲食店一覧取得  
+飲食店詳細取得  
+飲食店お気に入り追加  
+飲食店お気に入り削除  
+飲食店予約情報追加  
+飲食店予約情報削除  
+エリアで検索する  
+ジャンルで検索する  
+店名で検索する  
 
-## Code of Conduct
+## 追加機能一覧
+予約変更機能
+評価機能
+バリデーション
+管理画面
+認証
+メール送信
+QRコード
+決済機能
+リマインダー
+レスポンスデザイン
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 使用技術
+Laravel Framework 8.83.25  
+PHP 8.1.6  
+Javascript  
 
-## Security Vulnerabilities
+## ER図
+![ER図](https://user-images.githubusercontent.com/106807413/194704798-bdc37f9f-3772-4184-a4d1-21d1a0bdc217.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## テーブル設計
+![テーブル仕様書](https://user-images.githubusercontent.com/106807413/194700792-4160f5e3-4b44-42b3-a28f-a8cbcaa50f59.png)
