@@ -46,7 +46,7 @@ class ShopTest extends TestCase
         // shop_idを基に評価情報(review)を取得
         $reviews = Review::where('shop_id', $shop_id)->get();
         // shop、user_id、reservew、reviewsのデータを詳細データに渡す
-        $response = $this->get('/detail',['shop' => $shop,'user_id' => $user_id,'reserves' => $reserves,'reviews' => $reviews,]);
+        $response = $this->get('/detail',['shop_id' => $shop_id,'shop' => $shop,'user_id' => $user_id,'reserves' => $reserves,'reviews' => $reviews,]);
         //上記内容で詳細画面に遷移
         $response->assertRedirect('/detail');
         $response->assertStatus(200);

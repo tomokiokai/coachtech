@@ -5,13 +5,13 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Models\Like;
+use App\Models\Favorite;
 use App\Models\User;
 use App\Models\Shop;
 use Database\Seeders\ShopsTableSeeder;
 use Illuminate\Support\Facades\Auth;
 
-class LikeTest extends TestCase
+class FavoriteTest extends TestCase
 {
     /**
      * A basic feature test example.
@@ -21,25 +21,25 @@ class LikeTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function いいねの追加()
+    public function like()
     {
         $this->user = User::factory()->make();
         $this->seed();
         $this->shop = Shop::all()->first();
         
-        $like = Like::factory()->create([
+        $like = Favorite::factory()->create([
             'user_id' => $this->user->id,
             'shop_id' => $this->shop->id
             ]);
         
-        $this->assertDatabaseHas('likes', [
+        $this->assertDatabaseHas('favorites', [
             'user_id' => $this->user->id,
             'shop_id' => $this->shop->id
             ]);                        
     }
 
     /** @test */
-    public function いいねの削除()
+    public function unlike()
     {
         $this->user = User::factory()->create([
             'name' => 'test',
@@ -50,7 +50,7 @@ class LikeTest extends TestCase
         $this->seed();
         $shop = Shop::all()->first();
         
-        $like = Like::factory()->create([
+        $like = Favorite::factory()->create([
             'user_id' => $this->user->id,
             'shop_id' => $this->shop->id
         ]);

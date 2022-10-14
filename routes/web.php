@@ -69,6 +69,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::post('/update', [ManagementController::class, 'update'])
     ->middleware(['auth:admin'])->name('update');
 
+     Route::post('/store', [ManagementController::class, 'store'])
+    ->middleware(['auth:admin'])->name('store');
+
     require __DIR__.'/admin.php';
 });
 

@@ -55,6 +55,26 @@
     </div>
   </form>
 
+  <form action="store" method="post" class="form-content" enctype="multipart/form-data">
+    @csrf
+    <div>
+      <label class="title">店舗画像(URL)</label>
+      <input type="file" name="datafile">
+      @error('image')
+        <p class="error">{{ $message }}</p>
+      @enderror
+    </div>
+    <div id="file_viewer"></div>
+    <div>
+      <button type="submit" name="action" value="post">アップデート</button><br>
+    </div>
+    </form>
+    @if(app('env') == 'production')
+    <script src="{{ secure_asset('js/file.js') }}"></script>
+    @else
+    <script src="{{ asset('js/file.js') }}"></script>
+    @endif
+
   <h1>編集or予約状況確認</h1>
   <div id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
 
