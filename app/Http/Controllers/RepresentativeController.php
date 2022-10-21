@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
@@ -26,8 +26,15 @@ class RepresentativeController extends Controller
 
     public function create(Request $request)
     {
-        $form  = $request->all();
-        Admin::create($form);
+        $name  = $request->name;
+        $email = $request->email;
+        $password = $request->password;
+        Admin::create([
+            'name' => $name,
+            'email' => $email,
+            'password' => Hash::make($password)
+        ]);
+
         return redirect()->back();
     }
 
