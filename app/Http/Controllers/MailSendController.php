@@ -40,7 +40,7 @@ class MailSendController extends Controller
     {
         $comment = Auth::user()
             ->comments()
-            
+            ->orderBy('id', 'desc')
             ->first();
 
         return view('manager.comments.thanks', compact('comment'));
