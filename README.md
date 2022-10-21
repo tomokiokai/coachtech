@@ -13,7 +13,7 @@ https://aqueous-ridge-27902.herokuapp.com/
 
 user:aiueo
 email:aiueo@co.jp
-password:aiueo@co.jp
+password:aiueo111
 
 user:test111
 email:test111@aaa
@@ -76,6 +76,7 @@ QRコード
 リマインダー
 レスポンスデザイン
 ストレージ(AWS s3アップロード)
+※メール送信機能は個人情報の観点でmailtrapの設定のままでさせて頂きます
 
 ## 使用技術
 Laravel Framework 8.83.25  
