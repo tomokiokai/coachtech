@@ -22,7 +22,7 @@
             @enderror
             
             <i class="fa-solid fa-clipboard-question"></i>
-            <input type="text" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password">
         </div>
         <div class="form__btn">
             

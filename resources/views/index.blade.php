@@ -31,6 +31,10 @@
 </form>
 </div>
 </div>
+    @if($shops->isEmpty())
+      <p>検索結果、対象の店舗はございません</p>  
+    @endif
+
 @foreach ($shops as $shop)   
 
     <section class="card-list">

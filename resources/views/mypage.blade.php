@@ -14,7 +14,7 @@
         <div class="reserves-header">
           <div class="header-left">
             <i class="fa-regular fa-clock"></i>
-            <h3 class="reserves-number">予約{{$reserve->id}}</h3>
+            <h3 class="reserves-number">予約{{$loop->iteration}}</h3>
           </div>
           <div class="header-right">
             <form action="reserve/delete" method="post">

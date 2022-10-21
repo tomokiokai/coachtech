@@ -27,7 +27,7 @@
               <p class="error"> {{ $message }} </p>
             @enderror
             <i class="fa-solid fa-clipboard-question"></i>
-            <input type="text" name="password" id="password" placeholder="Password">
+            <input type="passwor" name="password" id="password" placeholder="Password">
         </div>
         <div class="form__btn">
             <button class="button">登録</button>

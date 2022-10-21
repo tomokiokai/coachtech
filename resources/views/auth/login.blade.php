@@ -8,7 +8,7 @@
 <div class="login">
     <form action="/login" method="post">
         @csrf
-        <h2 class="login__ttl">Login</h2>
+        <h1 class="login__ttl">Login</h2>
         <div class="login-email">
             @error('email')
               <p class="error"> {{ $message }} </p>
@@ -22,7 +22,7 @@
             @enderror
             
             <i class="fa-solid fa-clipboard-question"></i>
-            <input type="text" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password">
         </div>
         <div class="form__btn">
             

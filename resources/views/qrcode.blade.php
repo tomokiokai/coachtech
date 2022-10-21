@@ -10,12 +10,19 @@
 <div class="qr">
   {!! QrCode::size(300)->generate(route('proof',['reserve'=>$reserve])) !!}
 </div>
+<div class="back">
+<a href="javascript:history.back()">戻る</a>
+</div>
 </body>
 
 <style>
   .qr {
     text-align:center;
     margin-top:100px;
+  }
+
+  .back {
+    text-align:center;
   }
 </style>
 

@@ -30,6 +30,7 @@ Route::get('/detail', [ShopController::class, 'detail']);
 
 Route::middleware(['verified'])->group(function(){
 Route::get('mypage',[MypageController::class,'mypage']);
+Route::post('/reserve', [ReserveController::class, 'reserve']);
 });
 
 // メールアドレス認証
@@ -37,7 +38,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
     ->middleware(['signed', 'throttle:6,1'])
     ->name('verification.verify');
 
-Route::post('/reserve', [ReserveController::class, 'reserve']);
+
 Route::post('/like',[FavoriteController::class,'like']);
 Route::post('/unlike',[FavoriteController::class,'unlike']);
 Route::post('/update',[ReserveController::class,'update']);
