@@ -46,7 +46,7 @@
     
     <textarea name="comment" rows="6" cols="80">{{ $shop->comment }}</textarea>
     <div class="confirm">
-      <button type="submit" style="width:150px; font-size: 24px; background: rgb(69, 93, 244); color: #fff; border-radius: 8px; border: none;" name="action" value="post">編集</button><br>
+      <button type="submit" style="width:120px;     height: 40px; font-size: 18px; background: rgb(69, 93, 244); color: #fff; border-radius: 8px; border: none; " name="action" value="post">編集確定</button><br>
     </div>
   </div>
   </form>

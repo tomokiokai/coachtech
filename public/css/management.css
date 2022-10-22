@@ -284,6 +284,7 @@ a.card-link {
 
 .btn {
   background: rgb(69, 93, 244);
+  width: 120px;
   color: #fff;
   border-radius: 5px;
   border: none;

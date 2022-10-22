@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/managerdefault.css') }}">
     <title>Rese</title>
 </head>
 <body>
   <h1 class=>店舗情報 管理画面</h1>
   
   <div class="header">
-    <p>ユーザー:{{$user->name}}</p>
+    <p class="user-name">ユーザー:{{$user->name}}</p>
     <form action="{{ route('admin.logout') }}" method="post">
         @csrf
           <button class="">Logout</button>
