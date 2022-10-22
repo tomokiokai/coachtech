@@ -63,8 +63,6 @@ password:manager111
 エリアで検索する  
 ジャンルで検索する  
 店名で検索する  
-
-## 追加機能一覧
 予約変更機能
 評価機能
 バリデーション
@@ -83,8 +81,8 @@ Laravel Framework 8.83.25
 PHP 8.1.6  
 Javascript  
 
-## ER図
-![ER図](https://user-images.githubusercontent.com/106807413/194704798-bdc37f9f-3772-4184-a4d1-21d1a0bdc217.png)
-
 ## テーブル設計
 ![テーブル仕様書](https://user-images.githubusercontent.com/106807413/194700792-4160f5e3-4b44-42b3-a28f-a8cbcaa50f59.png)
+
+## ER図
+![ER図](https://user-images.githubusercontent.com/106807413/194704798-bdc37f9f-3772-4184-a4d1-21d1a0bdc217.png)
