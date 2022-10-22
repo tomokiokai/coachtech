@@ -6,7 +6,7 @@
   <div class="shop">
     <div class="shop__header">
       <a class="back" href="javascript:history.back()"><</a>
-      <h2 class="shop__ttl">{{ $shop->shop_name }}</h2>
+      <h1 class="shop__ttl">{{ $shop->shop_name }}</h1>
     </div>
     <img src="{{ $shop->image }}" alt="img">
     <div class="hashutag">

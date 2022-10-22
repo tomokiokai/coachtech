@@ -8,7 +8,7 @@
     <title>Rese</title>
 </head>
 <body>
-  <h2 class=>店舗情報 管理画面</h2>
+  <h1 class=>店舗情報 管理画面</h1>
   
   <div class="header">
     <p>ユーザー:{{$user->name}}</p>

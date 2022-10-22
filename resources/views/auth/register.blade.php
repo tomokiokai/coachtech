@@ -7,7 +7,7 @@
 <div class="register">
     <form action="/register" method="post">
         @csrf
-        <h2 class="register__ttl">Registration</h2>
+        <h1 class="register__ttl">Registration</h1>
         <div class="register-name">
             @error('name')
               <p class="error"> {{ $message }} </p>

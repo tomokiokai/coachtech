@@ -57,7 +57,7 @@
     <input type="hidden" name="user_id" value="{{ $user_id }}"> 
     <input type="hidden" name="shop_id" value="{{ $shop->id }}">
     <div class="reserve__inner">
-      <h2 class="reserve__ttl">予約状況</h2>
+      <h1 class="reserve__ttl">予約状況</h1>
       
       @auth
       @foreach ($reserves as $reserve) 
