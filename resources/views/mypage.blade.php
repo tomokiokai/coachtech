@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="css/mypage.css">
 <link href="css/all.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/1139700f97.js" crossorigin="anonymous"></script>
-<h2 class="user-name">{{$user}}さん</h2>
+<h1 class="user-name">{{$user}}さん</h1>
 <div class="mypage">
   <div class="reserves">
     <div class="reserves__inner">
